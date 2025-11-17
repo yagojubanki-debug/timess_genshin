@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: opacity 2500ms ease;
+    background-image: url(/images/personagens/fixedBackground.f2d6a3a.png);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 500ms forwards ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.fade-item {
+    opacity: 0;
+    animation: fadeInAnimation 3500ms forwards ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOutAnimation 3000ms forwards ease-in-out;
+}
+
+@keyframes fadeOutAnimation {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background-color: black;
+    height: 8vh;
+    width: 100vw;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        z-index: 1000;
+        /* Garante que a lista de navegação fique na frente */
+    }
+
+    .mobile-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+        /* Garante que o ícone do menu fique na frente */
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .nav-list.active {
+        transform: translateX(0);
+    }
+
+    .nav-list.active li {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .mobile-menu.active .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+
+    .mobile-menu.active .line2 {
+        opacity: 0;
+    }
+
+    .mobile-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+}
+
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+.fundo {
+    position: absolute;
+    z-index: -1}
+
+.selecao {
+    position: absolute;
+    z-index:-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.botão {
+    background-color: rgb(65, 65, 65);
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    transition: 1s;
+}
+
+.botão:hover {
+    background-color: rgba(0, 0, 0, 0.273);
+    filter: blur(0.5 px);
+    transform: scale(1.04);
+}
+
+.Personagens_anemo {
+    background-color: rgba(2, 34, 148, 0);
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    position: relative;
+    box-shadow: 6px 6px;
+}
+
+.Personagens_texto_anemo {
+    color: white;
+    padding-top: 39px;
+    text-align: center;
+}
+
+.container_texto_personagens_anemo {
+    background-color: rgb(37, 37, 37);
+    height: 99px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.img_personagens_anemo {
+    padding-top: 45px;
+}
+
+.Personagens_pyro {
+    margin-left: 85px;
+    background-color: rgba(2, 34, 148, 0);
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    position: relative;
+    box-shadow: 6px 6px;
+}
+
+.Personagens_texto_pyro {
+    color: white;
+    padding-top: 39px;
+    text-align: center;
+}
+
+.container_texto_personagens_pyro {
+    background-color: rgb(37, 37, 37);
+    height: 99px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.img_personagens_pyro {
+    padding-top: 45px;
+}
+
+.Personagens_cryo {
+    margin-left: 85px;
+    background-color: rgba(2, 34, 148, 0);
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    position: relative;
+    box-shadow: 6px 6px;
+}
+
+.Personagens_texto_cryo {
+    color: white;
+    padding-top: 39px;
+    text-align: center;
+}
+
+.container_texto_personagens_cryo {
+    background-color: rgb(37, 37, 37);
+    height: 99px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.img_personagens_cryo {
+    padding-top: 45px;
+}
